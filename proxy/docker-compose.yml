@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  proxy:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro"
+    networks:
+      - common_net
+networks:
+  common_net:
+    external: true
